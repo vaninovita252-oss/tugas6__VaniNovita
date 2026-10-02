@@ -1,0 +1,152 @@
+====================================================================================================
+                  HASIL KLASIFIKASI TANDA TANGAN
+====================================================================================================
+
+ATURAN:
+Ratio >= 2.00% -> SIGNATURE PRESENT
+Ratio < 2.00% -> SIGNATURE ABSENT
+
+1. 01_HighQuality_Enhanced (2)(1).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 8778 px
+   Ratio        : 3.07%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+2. 02_LowContrast (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 20628 px
+   Ratio        : 6.26%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+3. 03_Blurred (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 4854 px
+   Ratio        : 1.46%
+   Prediksi     : SIGNATURE ABSENT
+   Status       : INCORRECT
+
+4. 04_HighNoise (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 8318 px
+   Ratio        : 2.59%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+5. 05_LowResolution_Upsampled (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 7694 px
+   Ratio        : 2.40%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+6. 06_Faded_Underexposed (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 10005 px
+   Ratio        : 3.56%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+7. 07_ColorShift_WarmTint (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 8797 px
+   Ratio        : 2.44%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+8. 08_JPEGCompression_Artifacts (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 8291 px
+   Ratio        : 2.12%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+9. 09_CombinedDegradation (2).jpg
+   Label Aktual : SIGNATURE PRESENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 9279 px
+   Ratio        : 2.58%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : CORRECT
+
+10. 01_HighQuality_Enhanced (2)(1)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 26687 px
+   Ratio        : 9.34%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+
+11. 02_LowContrast (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 12648 px
+   Ratio        : 3.84%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+
+12. 03_Blurred (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 3833 px
+   Ratio        : 1.15%
+   Prediksi     : SIGNATURE ABSENT
+   Status       : CORRECT
+
+13. 04_HighNoise (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 38224 px
+   Ratio        : 11.89%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+
+14. 05_LowResolution_Upsampled (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 16503 px
+   Ratio        : 5.15%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+
+15. 06_Faded_Underexposed (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 10005 px
+   Ratio        : 3.56%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+
+16. 07_ColorShift_WarmTint (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : GLOBAL THRESHOLD
+   Foreground   : 375 px
+   Ratio        : 0.10%
+   Prediksi     : SIGNATURE ABSENT
+   Status       : CORRECT
+
+17. 08_JPEGCompression_Artifacts (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 34684 px
+   Ratio        : 8.87%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+
+18. 09_CombinedDegradation (2)_ABSENT.png
+   Label Aktual : SIGNATURE ABSENT
+   Threshold    : ADAPTIVE THRESHOLD
+   Foreground   : 10414 px
+   Ratio        : 2.90%
+   Prediksi     : SIGNATURE PRESENT
+   Status       : INCORRECT
+

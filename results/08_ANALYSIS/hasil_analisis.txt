@@ -1,0 +1,91 @@
+=============================================================================================================================
+                    HASIL ANALISIS DETEKSI TANDA TANGAN
+=============================================================================================================================
+
+ALUR PENGOLAHAN
+----------------------------------------------------------------------------------------------------
+1. Grayscale
+2. Global Threshold
+3. Adaptive Threshold
+4. Perbandingan Global dan Adaptive
+5. Memilih threshold terbaik
+6. Opening pada threshold terpilih
+7. Closing pada hasil Opening
+8. Segmentasi
+9. Perhitungan Foreground Pixel
+10. Perhitungan Foreground Ratio
+11. Klasifikasi Signature Present / Signature Absent
+
+PARAMETER
+----------------------------------------------------------------------------------------------------
+Global Threshold : 127
+Adaptive Block Size : 11
+Adaptive C : 2
+Kernel Morphology : 3 x 3
+Classification Threshold : 2.00%
+
+=============================================================================================================================
+                 HASIL ANALISIS SIGNATURE PRESENT
+=============================================================================================================================
+No  Nama Citra                         Aktual                  Global  AdaptiveTerpilih                  FG Pixel     RatioPrediksi            Status    
+-----------------------------------------------------------------------------------------------------------------------------
+1   01_HighQuality_Enhanced (2)(1...   PRESENT                 0.7220    0.4975GLOBAL THRESHOLD              8778     3.07%PRESENT             CORRECT   
+2   02_LowContrast (2).jpg             PRESENT                 0.3180    0.4876ADAPTIVE THRESHOLD           20628     6.26%PRESENT             CORRECT   
+3   03_Blurred (2).jpg                 PRESENT                 0.5860    0.5133GLOBAL THRESHOLD              4854     1.46%ABSENT              INCORRECT 
+4   04_HighNoise (2).jpg               PRESENT                 0.6888    0.4117GLOBAL THRESHOLD              8318     2.59%PRESENT             CORRECT   
+5   05_LowResolution_Upsampled (2...   PRESENT                 0.6765    0.4952GLOBAL THRESHOLD              7694     2.40%PRESENT             CORRECT   
+6   06_Faded_Underexposed (2).jpg      PRESENT                 0.7539    0.5185GLOBAL THRESHOLD             10005     3.56%PRESENT             CORRECT   
+7   07_ColorShift_WarmTint (2).jpg     PRESENT                 0.6691    0.4567GLOBAL THRESHOLD              8797     2.44%PRESENT             CORRECT   
+8   08_JPEGCompression_Artifacts ...   PRESENT                 0.6534    0.4589GLOBAL THRESHOLD              8291     2.12%PRESENT             CORRECT   
+9   09_CombinedDegradation (2).jpg     PRESENT                 0.6860    0.4735GLOBAL THRESHOLD              9279     2.58%PRESENT             CORRECT   
+=============================================================================================================================
+
+=============================================================================================================================
+                 HASIL ANALISIS SIGNATURE ABSENT
+=============================================================================================================================
+No  Nama Citra                         Aktual                  Global  AdaptiveTerpilih                  FG Pixel     RatioPrediksi            Status    
+-----------------------------------------------------------------------------------------------------------------------------
+1   01_HighQuality_Enhanced (2)(1...   ABSENT                 -0.0057    0.2964ADAPTIVE THRESHOLD           26687     9.34%PRESENT             INCORRECT 
+2   02_LowContrast (2)_ABSENT.png      ABSENT                  0.0000    0.3033ADAPTIVE THRESHOLD           12648     3.84%PRESENT             INCORRECT 
+3   03_Blurred (2)_ABSENT.png          ABSENT                  0.0000    0.3970ADAPTIVE THRESHOLD            3833     1.15%ABSENT              CORRECT   
+4   04_HighNoise (2)_ABSENT.png        ABSENT                 -0.0019    0.2389ADAPTIVE THRESHOLD           38224    11.89%PRESENT             INCORRECT 
+5   05_LowResolution_Upsampled (2...   ABSENT                  0.0000    0.3042ADAPTIVE THRESHOLD           16503     5.15%PRESENT             INCORRECT 
+6   06_Faded_Underexposed (2)_ABS...   ABSENT                  0.7539    0.5185GLOBAL THRESHOLD             10005     3.56%PRESENT             INCORRECT 
+7   07_ColorShift_WarmTint (2)_AB...   ABSENT                  0.5002    0.2952GLOBAL THRESHOLD               375     0.10%ABSENT              CORRECT   
+8   08_JPEGCompression_Artifacts ...   ABSENT                 -0.0018    0.3043ADAPTIVE THRESHOLD           34684     8.87%PRESENT             INCORRECT 
+9   09_CombinedDegradation (2)_AB...   ABSENT                 -0.0018    0.3015ADAPTIVE THRESHOLD           10414     2.90%PRESENT             INCORRECT 
+=============================================================================================================================
+
+
+RINGKASAN PENGUJIAN
+----------------------------------------------------------------------------------------------------
+Jumlah PRESENT : 9
+Jumlah ABSENT  : 9
+Total Citra    : 18
+Benar          : 10
+Salah          : 8
+Akurasi        : 55.56%
+
+PENJELASAN
+----------------------------------------------------------------------------------------------------
+Grayscale mengubah citra menjadi satu kanal intensitas agar proses segmentasi lebih mudah.
+
+Global Threshold menggunakan satu nilai threshold yang sama pada seluruh area citra.
+
+Adaptive Threshold menentukan nilai threshold berdasarkan kondisi lokal citra.
+
+Kedua metode thresholding dibandingkan terlebih dahulu. Metode dengan nilai kualitas segmentasi lebih tinggi dipilih sebagai threshold terbaik.
+
+Hanya threshold yang terpilih yang diteruskan ke proses Opening dan Closing.
+
+Opening digunakan untuk mengurangi noise atau objek kecil yang tidak diperlukan.
+
+Closing digunakan untuk menutup celah kecil pada objek hasil segmentasi.
+
+Foreground Pixel merupakan jumlah piksel yang terdeteksi sebagai objek foreground setelah proses Opening dan Closing.
+
+Foreground Ratio merupakan perbandingan jumlah foreground pixel dengan seluruh pixel citra.
+
+Jika Foreground Ratio >= 2.00% maka hasil dikategorikan sebagai SIGNATURE PRESENT.
+
+Jika Foreground Ratio < 2.00% maka hasil dikategorikan sebagai SIGNATURE ABSENT.
